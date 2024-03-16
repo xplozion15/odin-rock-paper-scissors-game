@@ -60,11 +60,41 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
+function playGame() {
+    let playerSelection = prompt("Pls enter your choice from ROCK,PAPER OR SCISSORS").toUpperCase();
+    playRound(playerSelection,computerSelection);
+
+    
+
+    playerSelection = prompt("Pls enter your choice from ROCK,PAPER OR SCISSORS").toUpperCase();
+    playRound(playerSelection,computerSelection);
+
+    playerSelection = prompt("Pls enter your choice from ROCK,PAPER OR SCISSORS").toUpperCase();
+    playRound(playerSelection,computerSelection);
+
+    playerSelection = prompt("Pls enter your choice from ROCK,PAPER OR SCISSORS").toUpperCase();
+    playRound(playerSelection,computerSelection);
+
+    playerSelection = prompt("Pls enter your choice from ROCK,PAPER OR SCISSORS").toUpperCase();
+    playRound(playerSelection,computerSelection);
 
 
+}
+
+
+
+
+let myScore = 0;
+let computerScore = 0;
 let computerSelection = getComputerChoice();
-let playerSelection = prompt("Pls enter your choice from ROCK,PAPER OR SCISSORS").toUpperCase();
-playRound(playerSelection,computerSelection);
+
+
+
+// playRound(playerSelection,computerSelection);
+playGame();
+
+
+
 
 
 

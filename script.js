@@ -22,61 +22,89 @@ function playRound(playerSelection, computerSelection) {
 
 
     if (playerSelection === "ROCK" && computerSelection === "ROCK") {
-        console.log("You and Computer both selected rock! its a Tie!");
+        return "You and Computer both selected rock! its a Tie!";
+
     }
 
     else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
-        console.log("You selected ROCK and computer selected paper! Computer won!");
+        computerScore += 1;
+        return "You selected ROCK and computer selected paper! Computer won!";
+
     }
 
     else if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
-        console.log("You selected ROCK and computer selected scissors! You won");
+        myScore += 1;
+        return "You selected ROCK and computer selected scissors! You won";
+
+
 
     }
 
     else if (playerSelection === "PAPER" && computerSelection === "PAPER") {
-        console.log("You and Computer both seleCTED PAPER! ITS A TIE");
+        return "You and Computer both seleCTED PAPER! ITS A TIE";
     }
 
     else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
-        console.log("You selected PAPER and computer selected ROCK! YOU won!");
+        myScore += 1;
+        return "You selected PAPER and computer selected ROCK! YOU won!";
+
     }
 
     else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
-        console.log("You selected PAPER and computer selected scissors! COMPUTER won");
+        computerScore += 1;
+        return "You selected PAPER and computer selected scissors! COMPUTER won";
+
 
     }
 
     else if (playerSelection === "SCISSORS" && computerSelection === "SCISSORS") {
-        console.log("You and Computer both seleCTED SCISSORS! ITS A TIE");
+        return "You and Computer both seleCTED SCISSORS! ITS A TIE";
     }
     else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
-        console.log("You selected SCISSORS and computer selected ROCK! COMPUTER WON!");
+        computerScore += 1;
+        return "You selected SCISSORS and computer selected ROCK! COMPUTER WON!";
+
     }
     else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
-        console.log("You selected SCISSORS and computer selected PAPER! YOU won");
+        myScore += 1;
+        return "You selected SCISSORS and computer selected PAPER! YOU won";
+
+
     }
 
 }
 
 
+
+
+
 function playGame() {
     let playerSelection = prompt("Pls enter your choice from ROCK,PAPER OR SCISSORS").toUpperCase();
-    playRound(playerSelection,computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
 
-    
 
-    playerSelection = prompt("Pls enter your choice from ROCK,PAPER OR SCISSORS").toUpperCase();
-    playRound(playerSelection,computerSelection);
 
     playerSelection = prompt("Pls enter your choice from ROCK,PAPER OR SCISSORS").toUpperCase();
-    playRound(playerSelection,computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
+
+
+
 
     playerSelection = prompt("Pls enter your choice from ROCK,PAPER OR SCISSORS").toUpperCase();
-    playRound(playerSelection,computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
+
+
 
     playerSelection = prompt("Pls enter your choice from ROCK,PAPER OR SCISSORS").toUpperCase();
-    playRound(playerSelection,computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
+
+
+
+
+
+    playerSelection = prompt("Pls enter your choice from ROCK,PAPER OR SCISSORS").toUpperCase();
+    console.log(playRound(playerSelection, computerSelection));
+
 
 
 }
@@ -93,6 +121,25 @@ let computerSelection = getComputerChoice();
 // playRound(playerSelection,computerSelection);
 playGame();
 
+
+
+
+
+
+console.log(`
+
+            The final score is You  ${myScore} - computer ${computerScore}`);
+
+
+if(computerScore > myScore) {
+    console.log(`                Oops! You lost!`);
+}
+else if(myScore > computerScore) {
+    console.log(`                congrats u won!`);
+}
+else {
+    console.log(`                hahhaha its a tie`);
+}
 
 
 

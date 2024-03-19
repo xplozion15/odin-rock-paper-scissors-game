@@ -27,13 +27,13 @@ function getComputerChoice() {
 
 
 function playRound(playerSelection, computerSelection) {
-    
-    
+
+
 
     if (playerSelection === "ROCK" && computerSelection === "ROCK") {
-        
-      
-        
+
+
+
 
         p.textContent = "You and Computer both selected rock! its a Tie!";
         p1.textContent = `You ${myScore} : Computer ${computerScore}`
@@ -63,7 +63,7 @@ function playRound(playerSelection, computerSelection) {
 
     else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
         myScore += 1;
-        
+
         p.textContent = "You selected PAPER and computer selected ROCK! YOU won!";
         p1.textContent = `You ${myScore} : Computer ${computerScore}`
 
@@ -98,31 +98,31 @@ function playRound(playerSelection, computerSelection) {
 
 
     if (myScore === 5) {
-        
-        
+
+
         p2.textContent = "Congratulation! You won the game! Click new game to play";
-        
 
-       
-        
+
+
+
     }
-    
-    
+
+
     else if (computerScore === 5) {
-        
-        p2.textContent = "Oops you lost! Play again hehe";
-       
-       
-        
-    }
-    
 
-    
+        p2.textContent = "Oops you lost! Play again hehe";
+
+
+
     }
-      
-        
-        
- 
+
+
+
+}
+
+
+
+
 
 
 
@@ -150,20 +150,25 @@ let scissorsBtn = document.querySelector("#scissors-btn");
 
 
 rockBtn.addEventListener("click", () => {
-    // playRound(playerSelection = "ROCK", computerSelection);
+    if (computerScore < 5  && myScore < 5) {
     (playRound(playerSelection = "ROCK", computerSelection));
-    
+    }
+
 
 })
-
 
 paperBtn.addEventListener("click", () => {
-    (playRound(playerSelection = "PAPER", computerSelection));
-})
+    if (computerScore < 5  && myScore < 5) {
+        playRound("PAPER", computerSelection);
+    }
+});
 
 scissorsBtn.addEventListener("click", () => {
-    (playRound(playerSelection = "SCISSORS", computerSelection));
-})
+    if (computerScore < 5 && myScore < 5) {
+        playRound("SCISSORS", computerSelection);
+    }
+});
+
 
 
 
@@ -176,4 +181,4 @@ function newGame() {
 
 
 newGamebtn = document.querySelector("#new-game");
-newGamebtn.addEventListener("click" , newGame);
+newGamebtn.addEventListener("click", newGame);

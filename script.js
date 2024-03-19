@@ -84,26 +84,26 @@ function playGame() {
 
 
 
-    playerSelection = prompt("Pls enter your choice from ROCK,PAPER OR SCISSORS").toUpperCase();
-    console.log(playRound(playerSelection, computerSelection));
+    // playerSelection = prompt("Pls enter your choice from ROCK,PAPER OR SCISSORS").toUpperCase();
+    // console.log(playRound(playerSelection, computerSelection));
 
 
 
 
-    playerSelection = prompt("Pls enter your choice from ROCK,PAPER OR SCISSORS").toUpperCase();
-    console.log(playRound(playerSelection, computerSelection));
+    // playerSelection = prompt("Pls enter your choice from ROCK,PAPER OR SCISSORS").toUpperCase();
+    // console.log(playRound(playerSelection, computerSelection));
 
 
 
-    playerSelection = prompt("Pls enter your choice from ROCK,PAPER OR SCISSORS").toUpperCase();
-    console.log(playRound(playerSelection, computerSelection));
+    // playerSelection = prompt("Pls enter your choice from ROCK,PAPER OR SCISSORS").toUpperCase();
+    // console.log(playRound(playerSelection, computerSelection));
 
 
 
 
 
-    playerSelection = prompt("Pls enter your choice from ROCK,PAPER OR SCISSORS").toUpperCase();
-    console.log(playRound(playerSelection, computerSelection));
+    // playerSelection = prompt("Pls enter your choice from ROCK,PAPER OR SCISSORS").toUpperCase();
+    // console.log(playRound(playerSelection, computerSelection));
 
 
 
@@ -115,11 +115,11 @@ function playGame() {
 let myScore = 0;
 let computerScore = 0;
 let computerSelection = getComputerChoice();
-
+let playerSelection;
 
 
 // playRound(playerSelection,computerSelection);
-playGame();
+// playGame();
 
 
 
@@ -143,8 +143,24 @@ else {
 
 
 
+let rockBtn = document.querySelector("#rock-btn");
+let paperBtn = document.querySelector("#paper-btn");
+let scissorsBtn = document.querySelector("#scissors-btn");
 
 
 
+rockBtn.addEventListener("click", () => {
+    // playRound(playerSelection = "ROCK", computerSelection);
+    console.log(playRound(playerSelection = "ROCK", computerSelection));
+    
+
+})
 
 
+paperBtn.addEventListener("click", () => {
+    console.log(playRound(playerSelection = "PAPER", computerSelection));
+})
+
+scissorsBtn.addEventListener("click", () => {
+    console.log(playRound(playerSelection = "SCISSORS", computerSelection));
+})

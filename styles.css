@@ -1,6 +1,9 @@
 body { 
     margin: 0;
     padding: 0;
+    font-family: dosis;
+    /* color: darkred; */
+    background-color: #d9d9d9
    
    
 }
@@ -16,7 +19,7 @@ h1 {
     justify-content: center;
     align-items: flex-start;
   
-    height: 500px;
+    height: 200px;
 }
 
 .img {
@@ -24,5 +27,36 @@ h1 {
     height: 200px;
     padding: 20px;
     cursor: pointer;
-    /* border-radius: 15px; */
+    border-radius: 35px;
+}
+
+.result-div {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    font-size: large;
+    font-weight: bolder;
+    height: auto;
+    margin-top: 50px;
+    color: black;
+
+}
+
+
+button {
+    background-color:#474343 ;
+    border: 2px solid #d9d9d9;
+    color: white;
+    padding: 15px;
+    margin: auto;
+    display: flex;
+justify-content: center;
+border-radius: 10px;
+width: 150px;
+height: 50px;
+}
+
+
+button:hover {
+    background-color: black;
 }

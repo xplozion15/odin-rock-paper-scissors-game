@@ -100,7 +100,7 @@ function playRound(playerSelection, computerSelection) {
     if (myScore === 5) {
         
         
-        p2.textContent = "Congratulation! You won the game!";
+        p2.textContent = "Congratulation! You won the game! Click new game to play";
         
 
        
@@ -151,18 +151,18 @@ let scissorsBtn = document.querySelector("#scissors-btn");
 
 rockBtn.addEventListener("click", () => {
     // playRound(playerSelection = "ROCK", computerSelection);
-    console.log(playRound(playerSelection = "ROCK", computerSelection));
+    (playRound(playerSelection = "ROCK", computerSelection));
     
 
 })
 
 
 paperBtn.addEventListener("click", () => {
-    console.log(playRound(playerSelection = "PAPER", computerSelection));
+    (playRound(playerSelection = "PAPER", computerSelection));
 })
 
 scissorsBtn.addEventListener("click", () => {
-    console.log(playRound(playerSelection = "SCISSORS", computerSelection));
+    (playRound(playerSelection = "SCISSORS", computerSelection));
 })
 
 

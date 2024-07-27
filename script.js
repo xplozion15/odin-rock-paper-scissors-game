@@ -5,7 +5,7 @@ let p1 = document.querySelector("#p1");
 let p2 = document.querySelector("#p2");
 
 function getComputerChoice() {
-    let randomNumber = Math.ceil(Math.random() * 3);
+    let randomNumber = Math.floor(Math.random() * 3);
     let choice;
     if (randomNumber === 1) {
         choice = "rock";

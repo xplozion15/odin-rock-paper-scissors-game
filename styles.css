@@ -13,6 +13,23 @@ h1 {
     text-align: center;
 }
 
+
+#p{
+    font-weight: bolder;
+    font-size: 30px;
+    color: #474343;
+}
+
+
+
+#p1 {
+    font-weight: 600;
+    font-size: 25px;
+    color: #474343;
+
+}
+
+
 .flex-container {
     display: flex;
     flex-direction: row;
@@ -33,7 +50,7 @@ h1 {
 .result-div {
     display: block;
     text-align: center;
-    padding: 20px;
+    /* padding: 20px; */
     font-size: large;
     font-weight: bolder;
     height: auto;

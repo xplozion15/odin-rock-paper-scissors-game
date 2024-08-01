@@ -1,21 +1,23 @@
 let myScore = 0;
 let computerScore = 0;
-let p = document.querySelector("#p");
-let p1 = document.querySelector("#p1");
-let p2 = document.querySelector("#p2");
-
+let youSelected = document.querySelector("#you-selected");
+let computerSelected = document.querySelector("#computer-selected");
+let roundResult = document.querySelector("#round-result");
+let finalResult = document.querySelector("#final-result");
 let computerSelection = getComputerChoice();
 let playerSelection;
-
 let rockBtn = document.querySelector("#rock-btn");
 let paperBtn = document.querySelector("#paper-btn");
 let scissorsBtn = document.querySelector("#scissors-btn");
-
+let yourScoreSelector = document.querySelector("#your-score");
+let computerScoreSelector = document.querySelector("#computer-score");
 
 let newGamebtn = document.querySelector("#new-game");
 newGamebtn.addEventListener("click", newGame);
 
-
+newGamebtn.addEventListener("click", () => {
+    document.getElementById('new-game').style.display = 'none';
+});
 
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
@@ -31,50 +33,88 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-
     computerSelection = getComputerChoice();
+
     if (playerSelection === "rock" && computerSelection === "rock") {
-        p.textContent = "You and the computer both selected Rock. It's a tie!";
-        p1.textContent = `😉 ${myScore} : 🤖 ${computerScore}`;
+        youSelected.textContent = `You have selected : ${playerSelection}`;
+        computerSelected.textContent = `Computer selected : ${computerSelection}`;
+        roundResult.textContent = `Its a draw!`;
+        yourScoreSelector.textContent = `Your Score : ${myScore}`;
+        computerScoreSelector.textContent = `CPU Score : ${computerScore}`;
+
     } else if (playerSelection === "rock" && computerSelection === "paper") {
         computerScore += 1;
-        p.textContent = "You selected Rock and the computer selected Paper. Computer won!";
-        p1.textContent = `😉 ${myScore} : 🤖 ${computerScore}`;
+        youSelected.textContent = `You have selected : ${playerSelection}`;
+        computerSelected.textContent = `Computer selected : ${computerSelection}`;
+        roundResult.textContent = `You win! Rock beats Paper`;
+        yourScoreSelector.textContent = `Your Score : ${myScore}`;
+        computerScoreSelector.textContent = `CPU Score : ${computerScore}`;
+
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
         myScore += 1;
-        p.textContent = "You selected Rock and the computer selected Scissors. You won!";
-        p1.textContent = `😉 ${myScore} : 🤖 ${computerScore}`;
+        youSelected.textContent = `You have selected : ${playerSelection}`;
+        computerSelected.textContent = `Computer selected : ${computerSelection}`;
+        roundResult.textContent = `You win! Rock beats Scissors`;
+        yourScoreSelector.textContent = `Your Score : ${myScore}`;
+        computerScoreSelector.textContent = `CPU Score : ${computerScore}`;
+
     } else if (playerSelection === "paper" && computerSelection === "paper") {
-        p.textContent = "You and the computer both selected Paper. It's a tie!";
-        p1.textContent = `😉 ${myScore} : 🤖 ${computerScore}`;
+        youSelected.textContent = `You have selected : ${playerSelection}`;
+        computerSelected.textContent = `Computer selected : ${computerSelection}`;
+        roundResult.textContent = `Its a draw!`;
+        yourScoreSelector.textContent = `Your Score : ${myScore}`;
+        computerScoreSelector.textContent = `CPU Score : ${computerScore}`;
+
     } else if (playerSelection === "paper" && computerSelection === "rock") {
         myScore += 1;
-        p.textContent = "You selected Paper and the computer selected Rock. You won!";
-        p1.textContent = `😉 ${myScore} : 🤖 ${computerScore}`;
+        youSelected.textContent = `You have selected : ${playerSelection}`;
+        computerSelected.textContent = `Computer selected : ${computerSelection}`;
+        roundResult.textContent = `You win! Paper beats Rock`;
+        yourScoreSelector.textContent = `Your Score : ${myScore}`;
+        computerScoreSelector.textContent = `CPU Score : ${computerScore}`;
+
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
         computerScore += 1;
-        p.textContent = "You selected Paper and the computer selected Scissors. Computer won!";
-        p1.textContent = `😉 ${myScore} : 🤖 ${computerScore}`;
+        youSelected.textContent = `You have selected : ${playerSelection}`;
+        computerSelected.textContent = `Computer selected : ${computerSelection}`;
+        roundResult.textContent = `You lose! Scissors beats Paper`;
+        yourScoreSelector.textContent = `Your Score : ${myScore}`;
+        computerScoreSelector.textContent = `CPU Score : ${computerScore}`;
+
     } else if (playerSelection === "scissors" && computerSelection === "scissors") {
-        p.textContent = "You and the computer both selected Scissors. It's a tie!";
-        p1.textContent = `😉 ${myScore} : 🤖 ${computerScore}`;
+        youSelected.textContent = `You have selected : ${playerSelection}`;
+        computerSelected.textContent = `Computer selected : ${computerSelection}`;
+        roundResult.textContent = `Its a draw!`;
+        yourScoreSelector.textContent = `Your Score : ${myScore}`;
+        computerScoreSelector.textContent = `CPU Score : ${computerScore}`;
+
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
         computerScore += 1;
-        p.textContent = "You selected Scissors and the computer selected Rock. Computer won!";
-        p1.textContent = `😉 ${myScore} : 🤖 ${computerScore}`;
+        youSelected.textContent = `You have selected : ${playerSelection}`;
+        computerSelected.textContent = `Computer selected : ${computerSelection}`;
+        roundResult.textContent = `You lose! Rock beats Scissors`;
+        yourScoreSelector.textContent = `Your Score : ${myScore}`;
+        computerScoreSelector.textContent = `CPU Score : ${computerScore}`;
+
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
         myScore += 1;
-        p.textContent = "You selected Scissors and the computer selected Paper. You won!";
-        p1.textContent = `😉 ${myScore} : 🤖 ${computerScore}`;
+        youSelected.textContent = `You have selected : ${playerSelection}`;
+        computerSelected.textContent = `Computer selected : ${computerSelection}`;
+        roundResult.textContent = `You win! Scissors beat Paper`;
+        yourScoreSelector.textContent = `Your Score : ${myScore}`;
+        computerScoreSelector.textContent = `CPU Score : ${computerScore}`;
     }
-    
+
     if (myScore === 5) {
-        p2.textContent = "Congratulations, You Won!";
+        finalResult.textContent = "Congratulations, You Won!";
+        document.getElementById('new-game').style.display = 'block';
     } else if (computerScore === 5) {
-        p2.textContent = "You lost, Play again!";
+        finalResult.textContent = "You lost, Play again!";
+        yourScoreSelector.textContent = `Your Score : ${myScore}`;
+        computerScoreSelector.textContent = `CPU Score : ${computerScore}`;
+        document.getElementById('new-game').style.display = 'block';
     }
 }
-
 
 rockBtn.addEventListener("click", () => {
     if (computerScore < 5 && myScore < 5) {
@@ -91,17 +131,13 @@ paperBtn.addEventListener("click", () => {
 scissorsBtn.addEventListener("click", () => {
     if (computerScore < 5 && myScore < 5) {
         playRound("scissors", computerSelection);
-        
     }
 });
-
-
 
 function newGame() {
     myScore = 0;
     computerScore = 0;
-    p1.textContent = `😉  0   :  🤖   0`;
-    p2.textContent = "";
+    finalResult.textContent = "";
+    yourScoreSelector.textContent = `Your Score : 0`;
+    computerScoreSelector.textContent = `CPU Score : 0`;
 }
-
-

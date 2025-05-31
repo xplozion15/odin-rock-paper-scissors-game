@@ -1,7 +1,7 @@
 # odin-rock-paper-scissors-game
 A classic rock, paper, scissors game to learn the basics of JavaScript functions! Learned about functions, DOM, and event listeners in this project!
 
-Live link: [https://abhilash15500.github.io/odin-rock-paper-scissors-game/](https://abhilash15500.github.io/odin-rock-paper-scissors-game/)
+Live link: [https://xplozion15.github.io/odin-rock-paper-scissors-game/](https://xplozion15.github.io/odin-rock-paper-scissors-game/)
 
 
 ## Image Credits
